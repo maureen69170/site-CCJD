@@ -71,7 +71,7 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
             </li>
 
             <li class="nav-item topnav-centered">
-                <a class="nav-link" href="">Projets Communs</a>
+                <a class="nav-link" href="../pages/projets_communs_galerie.php">Projets Communs</a>
             </li>
             <p>||</p>
             <li class="nav-item topnav-centered">
@@ -101,7 +101,7 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
 
 
 
-<section id="header" class="container-fluid <!--progress-bar-striped  progress-bar-animated-->">
+<section id="header" class="container-fluid">
     <div class="col-xs-8 col-md-4 profile-picture">
         <img src="../images/ccj/fake-img-personnes.jpg" alt="Fake Image de Personnes">
     </div>

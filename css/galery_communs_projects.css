@@ -1,0 +1,211 @@
+/*GENERAL DE LA PAGE*/
+
+body{
+    font-family: 'Oswald', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: bold;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+section{
+    padding: 45px 0px 80px 0px;
+}
+
+section > .heading{
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.blue-divider{
+    width: 100px;
+    height: 2px;
+    background-color: #128293;
+    margin: 0 auto;
+}
+
+.white-divider{
+    width: 100px;
+    height: 2px;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+/*NAV*/
+
+.navbar{
+    background-color: #fff;
+    font-size: 17px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #fff;
+
+}
+
+.navbar > .navbar-nav{
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+}
+
+.navbar > .navbar-collapse{
+    text-align: center;
+}
+
+/*.navbar > .navbar-collapse > .navbar-nav > .topnav-centered > a {
+    float: none;
+    position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        float: none;
+        display: block;
+    }
+
+    .topnav-centered a {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}*/
+
+.navbar > .navbar-collapse > .navbar-nav > .navbar-brand{
+    /*font-size: 42px;*/
+    margin-left: 10px;
+    background-image: linear-gradient(to right,
+    #9c105d, #973583, #8851a4,
+    #6f6abd, #5080cd, #2d91d4,
+    #00a0d5, #00add2, #00b9c5,
+    #00c2a4, #42c775, #8dc640);
+    /*background: -webkit-linear-gradient(#eee, #333);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.navbar > .navbar-collapse > .navbar-nav > .nav-item > .nav-link{
+    color: #333 !important;
+    border-radius: 3px;
+}
+
+.navbar > .navbar-collapse > .navbar-nav > .nav-item > .nav-link:hover{
+    color: #128293 !important;
+    background-color: #ddd !important;
+}
+
+.navbar > .navbar-toggler{
+    border-style: none;
+}
+
+.navbar > .navbar-toggler > i{
+    color: #333;
+}
+
+/*ABOUT*/
+
+#header{
+    padding-top: 100px;
+    /*background-color: #d82c2e;*/
+    background-color: grey;
+}
+
+section > .profile-picture{
+    text-align: center;
+    margin: 0 auto;
+    float: none;
+}
+
+#header > .heading > h1{
+    color: #fff;
+    text-transform: uppercase;/*mets en majuscules*/
+    text-shadow: 1px 2px 2px #000;
+}
+
+/*PROJETS*/
+
+#projets{
+    background-color: #fff;
+}
+
+#projets > .container > .heading3 > h2{
+    color: #128293;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 1px 2px 2px #000;
+
+}
+
+#projets > .container > .row > .col-md-12 > .container > .row > .col-md-4 > img{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#projets > .container > .row > .col-md-12 > .container > .row > .col-md-8 > .card-body{
+    text-align: center;
+}
+
+#projets > .container > .row > .col-md-12 >.card:hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+#projets > .container > .row > .col-md-12 > .container > .row >.col-md-8 > .card-body > .btn-card{
+    border: 2px solid #128293;
+    color: #128293;
+}
+
+#projets > .container > .row > .col-md-12 > .container > .row >.col-md-8 > .card-body > .btn-card:hover{
+    background-color: #128293;
+    color: #fff;
+}
+
+/*FOOTER*/
+
+footer{
+    background-color: #333;
+    padding: 20px 0 40px;
+}
+
+footer > .container > h2 {
+    color: #fff;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+footer > .container > .row{
+    margin-top: 20px;
+}
+
+footer > .container > a > i{
+    color: #128293;
+    margin-bottom: 10px;
+}
+
+footer > .container > .row > .col-md-6{
+    margin-top: 20px;
+}
+
+footer > .container > .row > .col-md-6 > a{
+    text-decoration: none;
+}
+
+footer > .container > .row > .col-md-6 > a > h4{
+    color: #ddd;
+}
+
+footer > .container > .row > .col-md-6 > a > h4:hover{
+    color: #128293;
+}
