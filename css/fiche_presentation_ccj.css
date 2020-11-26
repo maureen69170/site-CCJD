@@ -199,7 +199,7 @@ section > .profile-picture{
     text-shadow: 1px 2px 2px #000;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container{
+#contact > .container > .row > .col-md-4 > .contact-panel-container{
     width: 100%;
     padding-left: 55px;
 
@@ -211,7 +211,7 @@ section > .profile-picture{
     border-radius: 50%;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel{
     width: 100%;
     float: right;
     margin-right: 40px;
@@ -223,7 +223,7 @@ section > .profile-picture{
     background-color: #fff;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel-gps{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel-gps{
     width: 100%;
     float: right;
     margin-right: 40px;
@@ -235,7 +235,7 @@ section > .profile-picture{
     background-color: #fff;
 }
 
-#contact > .container > .row > .col-md-4 > .rounded-block > .timeline-panel{
+#contact > .container > .row > .col-md-4 > .rounded-block > .contact-panel{
     width: 100%;
     margin-right: 40px;
     padding: 25px;
@@ -247,7 +247,7 @@ section > .profile-picture{
     color: #128293;
 }
 
-#contact > .container > .row > .col-md-4 > .rounded-block > .timeline-panel > i{
+#contact > .container > .row > .col-md-4 > .rounded-block > .contact-panel > i{
     width: 100%;
     margin-right: 50px;
     padding: 50px;
@@ -257,7 +257,7 @@ section > .profile-picture{
     color: #128293;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel:after{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel:after{
     position: absolute;
     top: 80px;
     right: -30px;
@@ -270,24 +270,24 @@ section > .profile-picture{
 }
 
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel > .timeline-heading{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel > .contact-heading{
     text-align: center;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel > .timeline-heading > h3{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel > .contact-heading > h3{
     margin-top: 5px;
     color: #128293;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel > .timeline-heading > h5{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel > .contact-heading > h5{
     font-size: 20px;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel > .timeline-heading > a{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel > .contact-heading > a{
     color: #128293;
 }
 
-#contact > .container > .row > .col-md-4 > .timeline-panel-container > .timeline-panel > .timeline-heading > a:hover{
+#contact > .container > .row > .col-md-4 > .contact-panel-container > .contact-panel > .contact-heading > a:hover{
     color: #333;
 }
 
