@@ -1,56 +1,26 @@
 <?php
-require ('../database/connect.php');
-
+require('../bootstrap/init.php');
+global $bdd;
 $request = $bdd->prepare('SELECT * FROM ccj WHERE id='. $_GET['id'].' ');
 $request->execute();
 $ccjs1 = $request->fetchAll(PDO::FETCH_ASSOC);
 /*var_dump($ccjs1['presentation_ccj']);*/
 
-$requestProjets= $bdd->prepare('SELECT * FROM ccj LEFT JOIN projets ON projets.id WHERE  ccj.projet_id = 1 ');
+/*$requestProjets= $bdd->prepare('SELECT * FROM ccj LEFT JOIN projets ON ccj.id WHERE  projets.ccj_id = projets.id ');
+$requestProjets->execute();*/
+$requestProjets= $bdd->prepare('SELECT * FROM ccj LEFT JOIN projets ON ccj.id= projets.ccj_id');
 $requestProjets->execute();
-$projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
+$projets = $requestProjets->fetch(PDO::FETCH_ASSOC);
 
 
 /*var_dump($projets);*/
 
 ?>
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-
-
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="apple-touch-icon" sizes="57x57" href="../images/icones/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="../images/icones/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="../images/icones/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="../images/icones/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="../images/icones/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="../images/icones/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="../images/icones/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="../images/icones/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="../images/icones/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="../images/icones/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../images/icones/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="../images/icones/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../images/icones/favicon-16x16.png">
-    <link rel="manifest" href="../images/icones/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <?php include('../partials/head.php'); ?>
     <title>CCJ Présentation Fiche Page</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-          integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-          integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="../css/fiche_presentation_ccj.css">
 </head>
 <body data-spy="scroll" data-target="#navbar" data-offset="60">
@@ -140,7 +110,7 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
             <h2>Nos Projets</h2>
         </div>
         <div class="row">
-            <?php foreach ($projets as $projet) : ?>
+            <?php /*foreach ($projets as $projet) :*/?>
             <div class="col-md-12">
                 <div class="card mb-3 container" style="max-width: 100%; width: 100%;">
                     <div class="row no-gutters">
@@ -149,14 +119,14 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h5 class="card-title"><?php echo $projet['nom_projet']; ?></h5>
-                                <p class="card-text"><?php echo $projet['texte_projet']; ?></p>
+                                <h5 class="card-title"><?php echo $projets['nom_projet']; ?></h5>
+                                <p class="card-text"><?php echo $projets['texte_projet']; ?></p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <?php endforeach; ?>
+            <?php /*endforeach; */?>
         </div>
     </div>
 </section>
@@ -169,14 +139,14 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row">
             <div class="col-md-4">
-                <div class="timeline-panel-container">
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
+                <div class="contact-panel-container">
+                    <div class="contact-panel">
+                        <div class="contact-heading">
                             <?php foreach ($ccjs1 as $ccjs) :?>
                             <h3><?php echo $ccjs['mission_locale_nom']; ?></h3>
                             <p><?php echo $ccjs['adresse_ccj']; ?></p>
                             <p><?php echo $ccjs['code_postal_ccj']; ?> <?php echo $ccjs['ville_ccj']; ?>.</p>
-                            <a href="../pages/contact.html">
+                            <a href="contact.php">
                                 <i class="fas fa-envelope-open-text fa-3x"></i>
                             </a>
                             <p>
@@ -191,18 +161,19 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
 
             <div class="col-md-4">
                 <div class="rounded-block">
-                    <div class="timeline-panel">
+                    <div class="contact-panel">
                         <i class="fas fa-map-marked-alt fa-5x"></i>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4">
-                <div class="timeline-panel-container">
-                    <div class="timeline-panel-gps">
+                <div class="contact-panel-container">
+                    <div class="contact-panel-gps">
                         <?php foreach ($ccjs1 as $ccjs) :?>
                         <div>
-                            <?php echo $ccjs['maps']; ?>
+                            <iframe src="<?php echo $ccjs['maps']; ?>" width="240" height="250" frameborder="0"
+                                    style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
                         </div>
                         <?php endforeach; ?>
                     </div>
@@ -230,27 +201,11 @@ $projets = $requestProjets->fetchAll(PDO::FETCH_ASSOC);
     </div>
 </section>
 
-<footer class="text-center" id="footer">
-    <div class="container">
-        <a href="#header">
-            <i class="fas fa-chevron-circle-up fa-3x"></i>
-        </a>
-        <div class="blue-divider"></div>
-        <h2>ccjd !</h2>
-        <div class="row">
-            <div class="col-md-6">
-                <a href="">
-                    <h4>Mentions Légales</h4>
-                </a>
-            </div>
-            <div class="col-md-6">
-                <a href="">
-                    <h4>Politique de Confidentialitée</h4>
-                </a>
-            </div>
-        </div>
-    </div>
-</footer>
+
+<!--HEADER-->
+<?php
+    include('../partials/footer.php');
+?>
 
 
 

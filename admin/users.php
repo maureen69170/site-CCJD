@@ -33,7 +33,7 @@ $users = getAllUsers();
                             <p>Ici vous trouverez la liste de tout les utilisateurs admin du site, vous pouvez modifier, ainsi que de supprimer ou ajouter un utilisateur.</p>
                         </div>
                         <div class="card-body">
-                            <a href="login/register.php" style="font-size: 20px;">
+                            <a href="user_form_ajout.php" style="font-size: 20px;">
                                 <button type="button" class="btn btn-primary">
                                     <i class="fas fa-plus-circle fa-2x"></i>
                                     <p>Ajouter</p>

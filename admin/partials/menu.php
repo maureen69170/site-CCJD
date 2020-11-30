@@ -4,9 +4,13 @@
   -->
     <div class="logo">
         <h1 class="simple-text logo-normal">Administration</h1>
-        <a href="/admin/login/disconnect.php">
-            <button type="button" class="btn btn-info">DECONNEXION</button>
-        </a>
+
+        <?php if(!empty($_SESSION['user_name'])) { ?>
+            <p><i class="fas fa-user-check fa-lg"></i> <?= $_SESSION['user_name'] ?></p>
+            <a href="/admin/login/disconnect.php">
+                <button type="button" class="btn btn-info">DECONNEXION</button>
+            </a>
+        <?php } ?>
     </div>
     <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
@@ -23,19 +27,19 @@
                 </a>
             </li>
             <li class="<?= basename($_SERVER['PHP_SELF']) === 'user.php' ?  'active' : '' ?>">
-                <a href="./../users.php">
+                <a href="/admin/users.php">
                     <i class="fas fa-unlock-alt"></i>
-                    <p>Users</p>
+                    <p>Utilisateurs</p>
                 </a>
             </li>
             <li class="<?= basename($_SERVER['PHP_SELF']) === 'projets-ccjd.php' ?  'active' : '' ?>">
-                <a href="./projets-ccjd.php">
+                <a href="#">
                     <i class="far fa-folder-open"></i>
                     <p>Projets CCJ</p>
                 </a>
             </li>
             <li class="<?= basename($_SERVER['PHP_SELF']) === 'projets-ccjd.php' ?  'active' : '' ?>">
-                <a href="./projets-ccjd.php">
+                <a href="#">
                     <i class="fas fa-folder-open"></i>
                     <p>Projets CCJD</p>
                 </a>

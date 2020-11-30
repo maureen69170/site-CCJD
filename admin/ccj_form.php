@@ -100,7 +100,7 @@ if($isEdit) {
                                         </div>
                                     </div>
                                     <div class="col-md-3 offset-5">
-                                        <button type="submit" class="btn btn-success">Modifier</button>
+                                        <button type="submit" class="btn btn-success">Modifier CCJ</button>
                                     </div>
                                 </div>
                             </form>

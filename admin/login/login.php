@@ -1,35 +1,3 @@
-<?php
-require ('../../bootstrap/init.php');
-
-global $bdd;
-$username = $_POST['username'];
-//  Récupération de l'utilisateur et de son pass hashé
-$req = $bdd->prepare('SELECT id, password FROM log_admin WHERE user_name = :username');
-$req->execute(array(
-    'username' => $username));
-$resultat = $req->fetch();
-
-// Comparaison du pass envoyé via le formulaire avec la base
-$isPasswordCorrect = password_verify($_POST['password'], $resultat['password']);
-
-if (!$resultat)
-{
-    echo 'Mauvais identifiant ou mot de passe !';
-}
-else
-{
-    if ($isPasswordCorrect) {
-        session_start();
-        $_SESSION['id'] = $resultat['id'];
-        $_SESSION['username'] = $username;
-        echo 'Vous êtes connecté !';
-    }
-    else {
-        echo 'Mauvais identifiant ou mot de passe !';
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -55,7 +23,7 @@ else
         <div class="row">
             <div class="col-lg-4 col-md-6 ml-auto mr-auto">
                 <div class="card card-login">
-                    <form class="form" method="POST" action="../../admin/index.php">
+                    <form class="form" method="POST" action="/admin/login/log_verification.php">
                         <div class="card-header card-header-primary text-center">
                             <h4 class="card-title">Login</h4>
                         </div>
@@ -90,10 +58,8 @@ else
         </div>
     </div>
     <footer class="footer text-center ">
-        <p>Made with <a href="https://www.creative-tim.com/product/material-kit/?partner=101249">Material Kit</a> by Creative Tim</p>
     </footer>
 </div>
 
-<script src="../../js/login.js"></script>
 </body>
 </html>

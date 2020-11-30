@@ -1,9 +1,10 @@
 <?php
-require(__DIR__.'../../../bootstrap/init.php');
-$isEdit = isset($_POST["id"]);
+require(__DIR__.'/../../bootstrap/init.php');
+$isEdit = isset($_GET["id"]);
 global $bdd;
 
-    $query = ("DELETE FROM ccj WHERE ccj.id = '$isEdit'");
-
+    $query = $bdd->prepare("DELETE FROM ccj WHERE id = '.$isEdit.'");
+    $query->execute([$isEdit]);
+    /*var_dump($query);*/
 
 header( 'location: ../ccjs.php');

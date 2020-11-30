@@ -41,12 +41,12 @@ if($isEdit) {
                             <p>Vous etes entrain de supprimer un CCJ de définitivement, si c est ce que vous voulez faire cliquer sur la poubelle en bas.</p>
                         </div>
                         <div class="card-body">
-                            <form action="process/ccj_delete.php" method="post">
-                                <input type="hidden" name="co_id" value="<?php echo $isEdit; ?>">
+                            <form action="process/ccj_delete.php" method="get">
+                                <input type="hidden" name="id" value="<?php echo $isEdit; ?>">
                                 Nom: <?php echo $ccj['nom_ccj']; ?><br>
                                 ville: <?php echo $ccj['ville_ccj']; ?><br>
                                 <!--<input name="supprimer" type="Submit" value="Oui supprimer définitivement">-->
-                                <a href="/admin/process/ccj_delete.php?id=<?/*= $ccj['id']; */?>">
+                                <a href="/admin/process/ccj_delete.php?id=<?= $ccj['id']; ?>">
                                     <button type="button" name="supprimer" class="btn btn-danger"><i class="fas fa-trash fa-2x"></i></button>
                                 </a>
                             </form>

@@ -101,7 +101,7 @@ if($isEdit) {
                                     </div>
                                     <div class="col-md-3 offset-5">
                                         <a href="process/ccj_add.php">
-                                            <button type="submit" class="btn btn-success">Success</button>
+                                            <button type="submit" class="btn btn-success">Ajouter CCJ</button>
                                         </a>
                                     </div>
                                 </div>

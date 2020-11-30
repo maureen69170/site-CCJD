@@ -9,4 +9,4 @@ session_destroy();
 setcookie('username', '');
 setcookie('pass_hache', '');
 
-header( 'location: index.php');
+header( 'location: /index.php');
